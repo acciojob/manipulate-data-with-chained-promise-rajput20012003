@@ -20,6 +20,7 @@
         return new Promise((resolve) => {
           setTimeout(() => {
             const filteredArray = array.filter(num => num % 2 === 0);
+            document.getElementById("output").textContent = filteredArray.join(", ");
             resolve(filteredArray);
           }, 1000);
         });
@@ -28,6 +29,7 @@
         return new Promise((resolve) => {
           setTimeout(() => {
             const multipliedArray = filteredArray.map(num => num * 2);
+            document.getElementById("output").textContent = multipliedArray.join(", ");
             resolve(multipliedArray);
           }, 2000);
         });
@@ -38,11 +40,7 @@
     const inputArray = [1, 2, 3, 4];
 
     // Call the function with input array
-    manipulateArray(inputArray)
-      .then((resultArray) => {
-        // Update the text of the HTML element with ID "output" after each transformation
-        document.getElementById("output").textContent = resultArray.join(", ");
-      });
+    manipulateArray(inputArray);
   </script>
 </body>
 </html>
